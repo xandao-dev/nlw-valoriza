@@ -1,11 +1,13 @@
+import 'reflect-metadata';
+import './database';
 import express from 'express';
+import router from './routes';
 
 // https://expressjs.com/pt-br/
 const app = express();
 
-app.get('/test', (req, res) => res.send('Hello World!'));
-
-app.post('/test-post', (req, res) => res.send('Hello World, POST successful!'));
+app.use(express.json());
+app.use(router);
 
 // Listening on localhost:3000
 app.listen(3000, () => console.log('Server is running!'));

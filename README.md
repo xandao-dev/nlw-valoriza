@@ -18,9 +18,9 @@ This tool was created at Rocketseat's Next Level Week 6 event.
 
 - User registration
 
-	- [ ] Is not allowed to register an user with same email
+	- [x] Is not allowed to register an user with same email
 	
-	- [ ] Is not allowed to register an user without email
+	- [x] Is not allowed to register an user without email
     
 - Tag registration
 
@@ -66,6 +66,8 @@ yarn dev
 
 Want to contribute? Awesome!
 
+Workflow: NLW Valoriza uses Trunk Based Development(TBD) workflow!
+
 NLW Valoriza uses some tools to have a consistent and cool code.
 
 - [TypeScript](https://www.typescriptlang.org/) - strongly typed JavaScript
@@ -82,7 +84,7 @@ To work easily with the sqlite database we recommend to use [BeeKeeper Studio](h
 
 To test the RESTful API we recommend to use [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com/)
 
-## Docker
+### Docker
 
 TODO
 

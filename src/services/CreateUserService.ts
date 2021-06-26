@@ -14,7 +14,7 @@ export default class CreateUserService {
 		const userRepository = getCustomRepository(UserRepository);
 
 		if (!email) {
-			throw new Error('Email incorrect');
+			throw new Error('Invalid email');
 		}
 
 		const userAlreadyExists = await userRepository.findOne({
@@ -23,6 +23,10 @@ export default class CreateUserService {
 
 		if (userAlreadyExists) {
 			throw new Error('User already exists');
+		}
+
+		if (!password) {
+			throw new Error('Invalid password');
 		}
 
 		const passwordHash = await hash(password, 8);

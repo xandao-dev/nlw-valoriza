@@ -15,7 +15,11 @@ export default function ensureAuthenticated(req: Request, res: Response, next: N
 	// Get only the token part: Bearer <token>
 	const token = authToken.split(' ')[1] || '';
 	try {
-		const { sub } = verify(token, '29cb3ae4fa1449e3c7deb3658b69d414') as IPayload;
+		const secretKey = process.env.JWT_SECRET_KEY;
+		if (!secretKey) {
+			throw new Error(`Internal Error: Missing JWT SECRET KEY`);
+		}
+		const { sub } = verify(token, secretKey) as IPayload;
 		req.userId = sub;
 
 		return next();

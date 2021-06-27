@@ -25,15 +25,17 @@ export default class AuthenticateUserService {
 			throw new Error('Email/Password incorrect');
 		}
 
+		const secretKey = process.env.JWT_SECRET_KEY;
+		if (!secretKey) {
+			throw new Error(`Internal Error: Missing JWT SECRET KEY`);
+		}
 		// Generate Token
-		// Secret token created from: https://www.md5hashgenerator.com/
-		// TODO: add secret token to .env
 		// TODO: jwt refresh token
 		const token = sign(
 			{
 				email: user.email,
 			},
-			'29cb3ae4fa1449e3c7deb3658b69d414',
+			secretKey,
 			{
 				subject: user.id,
 				expiresIn: '1d',

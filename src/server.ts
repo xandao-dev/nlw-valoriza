@@ -1,16 +1,18 @@
 import 'reflect-metadata';
 import './database';
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import router from './routes';
+
+// Expose process.env.<ENVIRONMENTS VARIABLES>
+dotenv.config();
 
 // https://expressjs.com/pt-br/
 const app = express();
 
-// We can add an origin
 app.use(cors());
-
 app.use(express.json());
 app.use(router);
 app.use((err: Error, req: Request, res: Response) => {

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import ListUserSendComplimentsService from '../services/ListUserReceiveComplimentsService';
+import ListUserSendComplimentsService from '../services/ListUserSendComplimentsService';
 
 export default class ListUserReceiveComplimentsController {
 	async handle(request: Request, response: Response) {

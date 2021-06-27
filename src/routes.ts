@@ -20,7 +20,7 @@ router.post('/login', authenticateUserController.handle);
 router.post('/users', createUserController.handle);
 router.post('/tags', ensureAuthenticated, ensureAdmin, createTagController.handle);
 router.post('/compliments', ensureAuthenticated, createComplimentController.handle);
-router.get('/users/compliments/sent', ensureAuthenticated, listUserReceiveComplimentsController.handle);
-router.get('/users/compliments/received', ensureAuthenticated, listUserSendComplimentsController.handle);
+router.get('/user/compliments/sent', ensureAuthenticated, listUserSendComplimentsController.handle);
+router.get('/user/compliments/received', ensureAuthenticated, listUserReceiveComplimentsController.handle);
 
 export default router;

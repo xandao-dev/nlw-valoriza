@@ -8,7 +8,7 @@ import router from './routes';
 // https://expressjs.com/pt-br/
 const app = express();
 
-// We can add a origin
+// We can add an origin
 app.use(cors());
 
 app.use(express.json());

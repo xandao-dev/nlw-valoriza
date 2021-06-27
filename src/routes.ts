@@ -8,10 +8,12 @@ import CreateComplimentController from './controllers/CreateComplimentController
 import ListUserSendComplimentsController from './controllers/ListUserSendComplimentsController';
 import ListUserReceiveComplimentsController from './controllers/ListUserReceiveComplimentsController';
 import ListTagsController from './controllers/ListTagsController';
+import ListUsersController from './controllers/ListUsersController';
 
 const router = Router();
 const authenticateUserController = new AuthenticateUserController();
 const createUserController = new CreateUserController();
+const listUsersController = new ListUsersController();
 const listUserSendComplimentsController = new ListUserSendComplimentsController();
 const listUserReceiveComplimentsController = new ListUserReceiveComplimentsController();
 const createTagController = new CreateTagController();
@@ -20,6 +22,7 @@ const listTagsController = new ListTagsController();
 
 router.post('/login', authenticateUserController.handle);
 router.post('/users', createUserController.handle);
+router.get('/users', ensureAuthenticated, ensureAdmin, listUsersController.handle);
 router.get('/user/compliments/sent', ensureAuthenticated, listUserSendComplimentsController.handle);
 router.get('/user/compliments/received', ensureAuthenticated, listUserReceiveComplimentsController.handle);
 router.post('/tags', ensureAuthenticated, ensureAdmin, createTagController.handle);

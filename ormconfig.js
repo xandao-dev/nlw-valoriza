@@ -1,12 +1,19 @@
+let baseDir = '';
+if (process.env.NODE_ENV === 'development') {
+	baseDir = 'src';
+} else if (process.env.NODE_ENV === 'production') {
+	baseDir = 'dist';
+}
+
 module.exports = {
 	type: 'postgres',
 	host: 'localhost',
-	port: 5432,
 	username: process.env.DATABASE_USERNAME,
 	password: process.env.DATABASE_PASSWORD,
 	database: process.env.DATABASE_NAME,
-	migrations: ['src/database/migrations/*.ts'],
-	entities: ['src/entities/*.ts'],
+	port: process.env.DATABASE_PORT || 5432,
+	migrations: [`${baseDir}/database/migrations/*{.ts,.js}`],
+	entities: [`${baseDir}/entities/*{.ts,.js}`],
 	cli: {
 		migrationsDir: 'src/database/migrations',
 		entitiesDir: 'src/entities',

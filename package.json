@@ -1,10 +1,12 @@
 {
   "name": "nlw-valoriza",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
+    "prod": "node dist/server.js",
+    "build": "tsc -p .",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"

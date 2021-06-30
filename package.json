@@ -7,7 +7,7 @@
     "dev": "ts-node-dev src/server.ts",
     "prod": "node dist/server.js",
     "build": "tsc -p .",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
   },
@@ -38,6 +38,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.6.0",
     "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.0.0",
     "typeorm": "^0.2.34",
     "uuid": "^8.3.2"
   }

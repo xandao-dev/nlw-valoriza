@@ -5,9 +5,10 @@
 
 # *** DEVELOPMENT *** #
 FROM node:16-alpine AS development
+ARG port
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
-EXPOSE ${PORT}
+EXPOSE ${port}
 
 # Problem with empty node_modules: 
 #	https://stackoverflow.com/questions/51097652/install-node-modules-inside-docker-container-and-synchronize-them-with-host/61137716#61137716

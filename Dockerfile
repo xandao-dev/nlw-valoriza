@@ -27,6 +27,7 @@ RUN yarn build
 FROM node:16-alpine AS production
 WORKDIR /usr/src/app-dist
 COPY package.json yarn.lock ormconfig.js ./
+# Install packages again because we need to setup de database in production for the first time
 RUN yarn install --immutable --production
 COPY --from=builder /usr/src/app-build/dist ./dist
 CMD [ "yarn", "prod" ]

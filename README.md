@@ -165,9 +165,11 @@ NLW Valoriza uses [Trunk Based Development(TBD)](https://trunkbaseddevelopment.c
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+Obs: Do not use emojis in the commit messages, seems that AWS does not like it.
+
 Need a database tool? Try these [DBeaver](https://dbeaver.io/) or [BeeKeeper Studio](https://www.beekeeperstudio.io/)
 
-Want to try the API? Try these [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com/)
+Want to try the API? Try these [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com)
 
 <!-- LICENSE -->
 ## License

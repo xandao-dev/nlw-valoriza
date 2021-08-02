@@ -4,11 +4,11 @@
 # buildar o projeto. A segunda fase 'distribution' é responsável por isolar a transpilação.
 
 # *** DEVELOPMENT *** #
-FROM node:16-alpine AS development
+FROM node:14-alpine AS development
 ARG port
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
-EXPOSE ${port}
+EXPOSE 3000
 
 # Problem with empty node_modules: 
 #	https://stackoverflow.com/questions/51097652/install-node-modules-inside-docker-container-and-synchronize-them-with-host/61137716#61137716
